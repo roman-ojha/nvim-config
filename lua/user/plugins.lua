@@ -76,6 +76,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use "OmniSharp/omnisharp-vim" -- for C#/.NET LSP
+  use ({"neoclide/coc.nvim", branch = 'release'})
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -100,6 +102,9 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+
+  use "valloric/MatchTagAlways" -- Help to see where bracket begin and where close
+  use "jiangmiao/auto-pairs" -- auto create closing bracket
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
