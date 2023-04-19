@@ -76,7 +76,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
-  use "OmniSharp/omnisharp-vim" -- for C#/.NET LSP
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -88,7 +87,7 @@ return packer.startup(function(use)
 	use("williamboman/mason-lspconfig.nvim") -- Simple to use Language Server Installe
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  -- use ({"neoclide/coc.nvim", branch = 'release'}) -- Load Extensions like VSCode and host language servers
+  use "OmniSharp/omnisharp-vim" -- for C#/.NET LSP
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -105,6 +104,8 @@ return packer.startup(function(use)
 
   use "valloric/MatchTagAlways" -- Help to see where bracket begin and where close
   use "jiangmiao/auto-pairs" -- auto create closing bracket
+
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

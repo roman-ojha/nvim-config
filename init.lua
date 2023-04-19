@@ -18,4 +18,8 @@ require "user.project"
 require "user.impatient"
 -- require "user.indentline"
 require "user.neo-tree"
--- require "user.coc"
+
+--to import .vim file
+--vim.api.nvim_exec([[
+--  source ~/AppData/<file>.vim
+--]], false)

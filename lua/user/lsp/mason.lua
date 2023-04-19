@@ -1,14 +1,15 @@
 -- Specifying the server name
 local servers = {
-    "pyright",
-    "lua_ls",
+    "pyright", -- for python
+    "lua_ls", -- for .lua
     "tailwindcss",
     "html",
     "jsonls",
     "cssls",
     "tsserver",
     "eslint",
-    "omnisharp",
+    "omnisharp", -- for c#
+    "clangd", -- for c/c++
   }
   
 local settings = {
