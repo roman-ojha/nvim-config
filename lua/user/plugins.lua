@@ -77,7 +77,6 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "OmniSharp/omnisharp-vim" -- for C#/.NET LSP
-  use ({"neoclide/coc.nvim", branch = 'release'})
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -89,6 +88,7 @@ return packer.startup(function(use)
 	use("williamboman/mason-lspconfig.nvim") -- Simple to use Language Server Installe
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use ({"neoclide/coc.nvim", branch = 'release'}) -- Load Extensions like VSCode and host language servers
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

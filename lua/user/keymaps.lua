@@ -40,11 +40,11 @@ local status, telescope = pcall(require, "telescope.builtin")
 if status then
 	-- Telescope
 	map("n", "<leader>ff", telescope.find_files, opts)
-	map("n", "<leader>fg", telescope.live_grep, opts)
-	map("n", "<leader>fb", telescope.buffers, opts)
-	map("n", "<leader>fh", telescope.help_tags, opts)
-	map("n", "<leader>fs", telescope.git_status, opts)
-	map("n", "<leader>fc", telescope.git_commits, opts)
+	map("n", "<leader>lg", telescope.live_grep, opts)
+	map("n", "<leader>b", telescope.buffers, opts)
+	map("n", "<leader>ht", telescope.help_tags, opts)
+	map("n", "<leader>gs", telescope.git_status, opts)
+	map("n", "<leader>gc", telescope.git_commits, opts)
 else
 	print("Telescope not found")
 end
