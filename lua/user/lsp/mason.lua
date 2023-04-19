@@ -8,7 +8,7 @@ local servers = {
     "cssls",
     "tsserver",
     "eslint",
-    -- "omnisharp",
+    "omnisharp",
   }
   
 local settings = {

@@ -1,7 +1,0 @@
-{
-  "languageserver": {
-    "omnisharp": {
-      "filetypes": ["cs"]
-    }
-  }
-}
