@@ -23,8 +23,20 @@ return {
     "CursorLineNr",
     "EndOfBuffer",
   },
-  extra_groups = {
-    "NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
+  extra_groups = {     -- provide extra highlight where you want to make transparent
+    "Normal",
+    "NormalFloat",     -- plugins which have float panel such as Lazy, Mason, LspInfo
     "NeoTreeNormal",
+    "NeoTreeNormalNC", -- https://github.com/AstroNvim/AstroNvim/issues/8#issuecomment-1250253978
+    "StatusLine",
+    "CursorLine",
+    "CursorColumn",
+    "CursorLineNr",
+    "SignColumn",
+    "LineNr",
+    "TelescopePreviewNormal",
+    "TelescopeResultsNormal",
+    "TelescopePromptNormal",
+    "TelescopeNormal",
   },
 }
