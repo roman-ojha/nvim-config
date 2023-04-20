@@ -12,20 +12,6 @@ return {
   --   end,
   -- },
   {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    -- config = function()
-    --  require("todo-comments").setup {
-    --  }
-    -- end
-    opts = {},
-    event = "User AstroFile",
-    cmd = { "TodoQuickFix" },
-    keys = {
-      { "<leader>T", "<cmd>TodoTelescope<cr>", desc = "Open Todos in Telescope" },
-    },
-  },
-  {
     "OmniSharp/omnisharp-vim", -- for C#/.NET LSP
     opts = {},
   },
