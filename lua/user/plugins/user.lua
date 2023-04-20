@@ -13,4 +13,9 @@ return {
     "OmniSharp/omnisharp-vim", -- for C#/.NET LSP
     opts = {},
   },
+  {
+    "xiyaowong/transparent.nvim", -- Transparency
+    opts = require "user.plugins.config.transparent",
+    lazy = false,
+  },
 }

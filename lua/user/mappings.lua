@@ -23,6 +23,7 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<CA-w>"] = { "<CMD>qall<CR>", desc = "Quit all tabs" },
+    ["<C-t>"] = { "<CMD>TransparentToggle<CR>", desc = "Togglling Transparancy" },
   },
   t = {
     -- setting a mapping to false will disable it

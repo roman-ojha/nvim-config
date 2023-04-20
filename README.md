@@ -6,5 +6,5 @@
 
 
 ```shell
-git clone https://github.com/roman-ojha/nvim-config
+git clone https://github.com/roman-ojha/nvim-config nvim
 ```
