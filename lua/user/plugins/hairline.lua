@@ -1,4 +1,4 @@
-local ViMode = require("user.plugins.config.hairline").ViMode
+local ViMode = require("user.plugins.config.hairline").statusline.ViMode
 return {
   "rebelot/heirline.nvim",
   opts = {
