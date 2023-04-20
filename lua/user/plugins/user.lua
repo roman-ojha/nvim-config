@@ -25,4 +25,8 @@ return {
       { "<leader>T", "<cmd>TodoTelescope<cr>", desc = "Open Todos in Telescope" },
     },
   },
+  {
+    "OmniSharp/omnisharp-vim", -- for C#/.NET LSP
+    opts = {},
+  },
 }
