@@ -18,4 +18,10 @@ return {
     opts = require "user.plugins.config.transparent",
     lazy = false,
   },
+  {
+    "iamcco/markdown-preview.nvim", -- preview markdown,
+    config = function() vim.fn["mkdp#util#install"]() end,
+    event = "BufEnter *.md",        -- load only on when we open *.md file
+    cmd = "MarkdownPreview",
+  },
 }

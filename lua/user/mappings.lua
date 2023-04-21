@@ -23,7 +23,13 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<CA-w>"] = { "<CMD>qall<CR>", desc = "Quit all tabs" },
-    ["<C-t>"] = { "<CMD>TransparentToggle<CR>", desc = "Togglling Transparancy" },
+    ["F2"] = { "<CMD>TransparentToggle<CR>", desc = "Togglling Transparancy" },
+    ["<leader>r"] = { "<CMD>set wrap<CR>", desc = "Wrap word" },
+    -- markdown-preview
+    ["<leader>m"] = { desc = "  MarkDown Preview" },
+    ["<leader>mp"] = { ":MarkdownPreview<CR>", desc = "  Markdown Preview" },
+    ["<leader>ms"] = { ":MarkdownPreviewStop<CR>", desc = "  Markdown Preview Stop" },
+    ["<leader>mt"] = { ":MarkdownPreviewToggle<CR>", desc = "  Markdown Preview Toggle" },
   },
   t = {
     -- setting a mapping to false will disable it

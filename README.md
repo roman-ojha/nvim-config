@@ -4,7 +4,8 @@
 
 <h1 align="center">Neovim</h1>
 
-
 ```shell
 git clone https://github.com/roman-ojha/nvim-config nvim
 ```
+
+## Setup
