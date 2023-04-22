@@ -2,9 +2,7 @@ local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
 
-local function map(mode, lhs, rhs, options)
-	vim.keymap.set(mode, lhs, rhs, options)
-end
+local function map(mode, lhs, rhs, options) vim.keymap.set(mode, lhs, rhs, options) end
 
 -- Setting up a mapleader and maplocalleader as space key
 local global = vim.g
@@ -25,7 +23,7 @@ global.maplocalleader = " "
 -- 		<TAB> = the tab key
 -- 		<S-TAB> = the shift + tab key
 -- 		<C-h> = the control + h key
--- 		<C-l> = the control + l key 
+-- 		<C-l> = the control + l key
 -- 		<Space> = the space key
 -- <command_to_execute> = the command to execute
 --      <CMD>update<CR> = :update<CR>
@@ -46,11 +44,11 @@ if status then
 	map("n", "<leader>gs", telescope.git_status, opts)
 	map("n", "<leader>gc", telescope.git_commits, opts)
 else
-	print("Telescope not found")
+	print "Telescope not found"
 end
 
 -- Packer plugin popup window
-map("n","<leader>pp","<CMD>PackerStatus<CR>",opts)
+map("n", "<leader>pp", "<CMD>PackerStatus<CR>", opts)
 
 -- <leader> = the space key
 
@@ -91,10 +89,9 @@ map("t", "<CA-n>", "<CMD>ToggleTerm direction=float<CR><ESC>", term_opts)
 -- map to exit terminal mode
 map("t", "<C-[>", "<C-\\><C-n>", term_opts)
 -- map to focus from terminal to normal mode and transfer the cursor to buffers
-map("t","<C-j>", "<C-\\><C-n><C-w>h", term_opts)
+map("t", "<C-j>", "<C-\\><C-n><C-w>h", term_opts)
 -- open powershell as buffer
 map("n", "<SA-t>", "<CMD>terminal pwsh.exe<CR>", term_opts)
-
 
 -- Markdown Preview
 map("n", "<leader>m", "<CMD>MarkdownPreview<CR>", opts)
@@ -133,4 +130,4 @@ map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
 
 -- delete word like ctrl + backspace
-map("n", "<BS>","diw", opts)
+map("n", "<BS>", "diw", opts)

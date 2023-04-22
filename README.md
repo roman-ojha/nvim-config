@@ -28,3 +28,13 @@ git clone https://github.com/roman-ojha/nvim-config $HOME\AppData\Local\nvim --d
 ### My Plugins Setups:
 
 1. For C/C++ ISP [clangd](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd)
+
+2. For [wilder.nvim](https://github.com/gelguy/wilder.nvim)
+
+- using Python
+
+```shell
+ pip3 install pynvim
+```
+
+- :UpdateRemotePlugins
