@@ -64,6 +64,9 @@ return {
     -- },
     ["<SA-t>"] = { "<CMD>terminal pwsh.exe<CR>", desc = "Open new powershell terminal" },
     ["<CA-b>"] = { "<CMD>ToggleTerm direction=vertical<CR>", desc = "Toggle terminal" },
+    ["<SA-b>"] = { "<CMD>Neotree toggle<CR>", desc = "Toggle Explorer" },
+    -- Symbol-outline plugin
+    ["<leader>s"] = { "<CMD>SymbolsOutline<CR>", desc = "𝓒 Toggle Symbols outline" },
   },
   t = {
     -- setting a mapping to false will disable it

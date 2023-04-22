@@ -29,4 +29,9 @@ return {
     config = function() require "user.plugins.config.wilder" end,
     lazy = false,
   },
+  {
+    "simrat39/symbols-outline.nvim",
+    config = function() require "user.plugins.config.symbols-outline" end,
+    lazy = false,
+  },
 }

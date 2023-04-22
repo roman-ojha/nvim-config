@@ -6,5 +6,9 @@ return {
         padding = 1,
       },
     },
+    source_selector = {
+      winbar = false,
+      statusline = false,
+    },
   },
 }
