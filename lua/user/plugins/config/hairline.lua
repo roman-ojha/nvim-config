@@ -1,5 +1,6 @@
 -- https://github.com/rebelot/heirline.nvim/blob/master/cookbook.md#crash-course-the-vimode
-local status = require "astronvim.utils.status"
+local loaded_ok, status = pcall(require, "astronvim.utils.status")
+if not loaded_ok then return end
 local C = status.env.fallback_colors
 local ViMode = {
   -- get vim current mode, this information will be required by the provider
