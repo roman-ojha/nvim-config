@@ -35,26 +35,41 @@ return {
     ["<leader>pt"] = { "::TSInstallInfo<CR>", desc = "Treesitter plugins info" },
     ["<leader>pz"] = { "::Lazy<CR>", desc = "Lazy Package manager" },
     -- Buffer
-    ["{"] = { -- move buffer left, shift + [
+    ["("] = { -- move buffer left, shift + [
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
-    ["}"] = { -- move buffer right
+    [")"] = { -- move buffer right
       function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
       desc = "Next buffer",
     },
-    ["<A-}>"] = {
-      function() require("astronvim.utils.buffer").move(vim.v.count > 0 and vim.v.count or 1) end,
-      desc = "Move buffer tab right",
-    },
-    ["<A-{>"] = {
+    ["<A-(>"] = {
       function() require("astronvim.utils.buffer").move(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Move buffer tab left",
     },
+    ["<A-)>"] = {
+      function() require("astronvim.utils.buffer").move(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Move buffer tab right",
+    },
+    -- Move text up and down
+    ["<A-j>"] = { ":m .+1<CR>==", desc = "Move line down" },
+    ["<A-k>"] = { ":m .-2<CR>==", desc = "Move line up" },
+    ["<A-Down>"] = { ":m .+1<CR>==", desc = "Move line down" },
+    ["<A-Up>"] = { ":m .-2<CR>==", desc = "Move line up" },
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
     ["<C-[>"] = { "<C-\\><C-n>", desc = "Exit terminal mode" },
+  },
+  v = {
+    -- Move text up and down
+    ["<A-j>"] = { ":m '>+1<cr>==gv", desc = "" },
+    ["<A-k>"] = { ":m '<-2<cr>==gv", desc = "" },
+    ["<A-Down>"] = { ":m '>+1<cr>==gv", desc = "" },
+    ["<A-Up"] = { ":m '<-2<cr>gv==gv", desc = "" },
+    -- Stay in indent mode while tabbing lines in visual mod
+    ["<"] = { "<gv", desc = "Stay in indent mode while tabbing lines in visual mod" },
+    [">"] = { ">gv", desc = "Stay in indent mode while tabbing lines in visual mod" },
   },
 }
