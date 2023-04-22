@@ -30,6 +30,27 @@ return {
     ["<leader>mp"] = { ":MarkdownPreview<CR>", desc = "  Markdown Preview" },
     ["<leader>ms"] = { ":MarkdownPreviewStop<CR>", desc = "  Markdown Preview Stop" },
     ["<leader>mt"] = { ":MarkdownPreviewToggle<CR>", desc = "  Markdown Preview Toggle" },
+    --plugins <leader>p
+    ["<leader>pp"] = { ":LspInfo<CR>", desc = "Currently running lsp" },
+    ["<leader>pt"] = { "::TSInstallInfo<CR>", desc = "Treesitter plugins info" },
+    ["<leader>pz"] = { "::Lazy<CR>", desc = "Lazy Package manager" },
+    -- Buffer
+    ["{"] = { -- move buffer left, shift + [
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
+    ["}"] = { -- move buffer right
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    ["<A-}>"] = {
+      function() require("astronvim.utils.buffer").move(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Move buffer tab right",
+    },
+    ["<A-{>"] = {
+      function() require("astronvim.utils.buffer").move(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Move buffer tab left",
+    },
   },
   t = {
     -- setting a mapping to false will disable it
