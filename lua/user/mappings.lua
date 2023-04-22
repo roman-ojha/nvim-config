@@ -35,32 +35,42 @@ return {
     ["<leader>pt"] = { "::TSInstallInfo<CR>", desc = "Treesitter plugins info" },
     ["<leader>pz"] = { "::Lazy<CR>", desc = "Lazy Package manager" },
     -- Buffer
-    ["("] = { -- move buffer left, shift + [
+    ["<A-*>"] = { -- move buffer left, shift + [
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
-    [")"] = { -- move buffer right
+    ["<A-(>"] = { -- move buffer right
       function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
       desc = "Next buffer",
     },
-    ["<A-(>"] = {
-      function() require("astronvim.utils.buffer").move(-(vim.v.count > 0 and vim.v.count or 1)) end,
-      desc = "Move buffer tab left",
-    },
-    ["<A-)>"] = {
-      function() require("astronvim.utils.buffer").move(vim.v.count > 0 and vim.v.count or 1) end,
-      desc = "Move buffer tab right",
-    },
+    -- ["<A-*>"] = {
+    --   function() require("astronvim.utils.buffer").move(-(vim.v.count > 0 and vim.v.count or 1)) end,
+    --   desc = "Move buffer tab left",
+    -- },
+    -- ["<A-(>"] = {
+    --   function() require("astronvim.utils.buffer").move(vim.v.count > 0 and vim.v.count or 1) end,
+    --   desc = "Move buffer tab right",
+    -- },
     -- Move text up and down
     ["<A-j>"] = { ":m .+1<CR>==", desc = "Move line down" },
     ["<A-k>"] = { ":m .-2<CR>==", desc = "Move line up" },
     ["<A-Down>"] = { ":m .+1<CR>==", desc = "Move line down" },
     ["<A-Up>"] = { ":m .-2<CR>==", desc = "Move line up" },
+    ["<BS>"] = { "diw", desc = "Delete word like ctrl + backspace in insert mode in other text editor" },
+    -- Terminal
+    -- ["<C-k>"] = {
+    --   "<CMD>ToggleTerm direction=vertical<CR>",
+    --   desc = "Focus Terminal",
+    -- },
+    ["<SA-t>"] = { "<CMD>terminal pwsh.exe<CR>", desc = "Open new powershell terminal" },
+    ["<CA-b>"] = { "<CMD>ToggleTerm direction=vertical<CR>", desc = "Toggle terminal" },
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
     ["<C-[>"] = { "<C-\\><C-n>", desc = "Exit terminal mode" },
+    ["<C-j>"] = { "<C-\\><C-n><C-w>h", desc = "Focus from terminal to normal mode and transfer the cursor to buffers" },
+    ["<CA-b>"] = { "<CMD>ToggleTerm direction=vertical<CR>", desc = "Toggle terminal" },
   },
   v = {
     -- Move text up and down

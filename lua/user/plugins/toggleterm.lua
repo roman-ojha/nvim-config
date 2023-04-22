@@ -1,8 +1,8 @@
 return {
   "akinsho/toggleterm.nvim",
   opts = {
-    -- size = 50,
-    -- open_mapping = [[<F7>]],
+    size = 50,
+    open_mapping = [[<F7>]],
     hide_numbers = true,
     shade_filetypes = {},
     shade_terminals = true,
