@@ -21,7 +21,7 @@ return {
   {
     "iamcco/markdown-preview.nvim", -- preview markdown,
     config = function() vim.fn["mkdp#util#install"]() end,
-    event = "BufEnter *.md",        -- load only on when we open *.md file
+    event = "BufEnter *.md", -- load only on when we open *.md file
     cmd = "MarkdownPreview",
   },
   {
@@ -33,5 +33,19 @@ return {
     "simrat39/symbols-outline.nvim",
     config = function() require "user.plugins.config.symbols-outline" end,
     lazy = false,
+  },
+  -- {
+  --   "thosakwe/vim-flutter",
+  --   -- commands: https://github.com/thosakwe/vim-flutter#provided-commands
+  --   config = function() end,
+  --   event = "BufEnter *.dart",
+  -- },
+  {
+    "akinsho/flutter-tools.nvim",
+    event = "BufEnter *.dart",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim", -- optional for vim.ui.select
+    },
   },
 }
