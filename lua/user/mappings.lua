@@ -81,9 +81,9 @@ return {
     ["<leader>r"] = { desc = " Code Runner" },
     ["<leader>rr"] = { ":RunCode<CR>", desc = " Run Code" },
     ["<leader>rf"] = { ":RunFile<CR>", desc = " Run File" },
-    ["<leader>rft"] = { ":RunFile tab<CR>", desc = " Run File Tab" },
+    -- ["<leader>rft"] = { ":RunFile tab<CR>", desc = " Run File Tab" },
     ["<leader>rp"] = { ":RunProject<CR>", desc = " Run Project" },
-    ["<leader>rc"] = { ":RunClose<CR>", desc = " Run Close" },
+    -- ["<leader>rc"] = { ":RunClose<CR>", desc = " Run Close" },
   },
   t = {
     -- setting a mapping to false will disable it
