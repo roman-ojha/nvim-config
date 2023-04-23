@@ -3,6 +3,7 @@
 -- Please use this mappings table to set keyboard mapping since this is the
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
+local cmp = require "cmp"
 return {
   -- first key is the mode
   n = {
@@ -22,7 +23,9 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-    ["<CA-w>"] = { "<CMD>qall<CR>", desc = "Quit all tabs" },
+    -- ["<CA-w>"] = { "<CMD>qall<CR>", desc = "Quit Nvim" },
+    ["<CA-w>"] = { function() require("astronvim.utils.buffer").close_all() end, desc = "Close all buffers" },
+    ["<SA-w>"] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
     ["F2"] = { "<CMD>TransparentToggle<CR>", desc = "Togglling Transparancy" },
     ["<leader>r"] = { "<CMD>set wrap<CR>", desc = "Wrap word" },
     -- markdown-preview
@@ -65,6 +68,11 @@ return {
     ["<SA-t>"] = { "<CMD>terminal pwsh.exe<CR>", desc = "Open new powershell terminal" },
     ["<CA-b>"] = { "<CMD>ToggleTerm direction=vertical<CR>", desc = "Toggle terminal" },
     ["<SA-b>"] = { "<CMD>Neotree toggle<CR>", desc = "Toggle Explorer" },
+    -- open multiple terminal
+    ["<leader>t1"] = { "<CMD>1ToggleTerm direction=vertical<CR>", desc = "Toggle 1st terminal" },
+    ["<leader>t2"] = { "<CMD>2ToggleTerm direction=float<CR>", desc = "Toggle 2nd terminal" },
+    ["<leader>t3"] = { "<CMD>3ToggleTerm direction=float<CR>", desc = "Toggle 3nd terminal" },
+    ["<leader>t4"] = { "<CMD>4ToggleTerm direction=float<CR>", desc = "Toggle 4nd terminal" },
     -- Symbol-outline plugin
     ["<leader>s"] = { "<CMD>SymbolsOutline<CR>", desc = "𝓒 Toggle Symbols outline" },
   },

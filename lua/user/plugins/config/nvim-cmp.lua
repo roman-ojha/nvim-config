@@ -26,7 +26,7 @@ local kind_icons = {
   Operator = "",
   TypeParameter = "",
 }
-
+local cmp = require "cmp"
 return {
   formatting = {
     fields = { "kind", "abbr", "menu" },
@@ -41,5 +41,8 @@ return {
       })[entry.source.name]
       return vim_item
     end,
+  },
+  mapping = {
+    ["<C-c>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
   },
 }
