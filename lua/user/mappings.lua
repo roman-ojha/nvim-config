@@ -26,7 +26,7 @@ return {
     ["<CA-w>"] = { function() require("astronvim.utils.buffer").close_all() end, desc = "Close all buffers" },
     ["<SA-w>"] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
     ["<F2>"] = { "<CMD>TransparentToggle<CR>", desc = "Togglling Transparancy" },
-    ["<leader>r"] = { "<CMD>set wrap<CR>", desc = "Wrap word" },
+    ["<leader>q"] = { "<CMD>set wrap<CR>", desc = "Wrap word" },
     -- markdown-preview
     ["<leader>m"] = { desc = "  MarkDown Preview" },
     ["<leader>mp"] = { ":MarkdownPreview<CR>", desc = "  Markdown Preview" },
@@ -74,6 +74,13 @@ return {
     ["<leader>t4"] = { "<CMD>4ToggleTerm direction=float<CR>", desc = "Toggle 4nd terminal" },
     -- Symbol-outline plugin
     ["<leader>s"] = { "<CMD>SymbolsOutline<CR>", desc = "𝓒 Toggle Symbols outline" },
+    -- Code Runner Plugin
+    ["<leader>r"] = { desc = " Code Runner" },
+    ["<leader>rr"] = { ":RunCode<CR>", desc = " Run Code" },
+    ["<leader>rf"] = { ":RunFile<CR>", desc = " Run File" },
+    ["<leader>rft"] = { ":RunFile tab<CR>", desc = " Run File Tab" },
+    ["<leader>rp"] = { ":RunProject<CR>", desc = " Run Project" },
+    ["<leader>rc"] = { ":RunClose<CR>", desc = " Run Close" },
   },
   t = {
     -- setting a mapping to false will disable it

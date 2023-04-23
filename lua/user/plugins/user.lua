@@ -51,8 +51,16 @@ return {
   },
   {
     "CRAG666/code_runner.nvim",
-    -- config = function() require("code_runner").setup {} end,
-    config = function() require("code_runner").setup {} end,
-    event = { "BufEnter *.py", "BufEnter *.cpp", "BufEnter *.cs" },
+    config = function() require "user.plugins.config.code-runner" end,
+    -- config = require "user.plugins.config.code-runner",
+    event = {
+      "BufEnter *.py",
+      "BufEnter *.cpp",
+      "BufEnter *.cs",
+      "BufEnter *.js",
+      "BufEnter *.c",
+      "BufEnter *.java",
+      "BufEnter *.sh",
+    },
   },
 }
