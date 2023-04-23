@@ -21,7 +21,7 @@ return {
   {
     "iamcco/markdown-preview.nvim", -- preview markdown,
     config = function() vim.fn["mkdp#util#install"]() end,
-    event = "BufEnter *.md", -- load only on when we open *.md file
+    event = "BufEnter *.md",        -- load only on when we open *.md file
     cmd = "MarkdownPreview",
   },
   {
@@ -48,5 +48,11 @@ return {
       "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
     config = require "user.plugins.config.flutter-tools",
+  },
+  {
+    "CRAG666/code_runner.nvim",
+    -- config = function() require("code_runner").setup {} end,
+    config = function() require("code_runner").setup {} end,
+    event = { "BufEnter *.py", "BufEnter *.cpp", "BufEnter *.cs" },
   },
 }

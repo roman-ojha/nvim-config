@@ -1,5 +1,4 @@
 -- Mapping data with "desc" stored directly by vim.keymap.set().
---
 -- Please use this mappings table to set keyboard mapping since this is the
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
@@ -26,7 +25,7 @@ return {
     -- ["<CA-w>"] = { "<CMD>qall<CR>", desc = "Quit Nvim" },
     ["<CA-w>"] = { function() require("astronvim.utils.buffer").close_all() end, desc = "Close all buffers" },
     ["<SA-w>"] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
-    ["F2"] = { "<CMD>TransparentToggle<CR>", desc = "Togglling Transparancy" },
+    ["<F2>"] = { "<CMD>TransparentToggle<CR>", desc = "Togglling Transparancy" },
     ["<leader>r"] = { "<CMD>set wrap<CR>", desc = "Wrap word" },
     -- markdown-preview
     ["<leader>m"] = { desc = "  MarkDown Preview" },
