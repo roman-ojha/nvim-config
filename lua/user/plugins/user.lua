@@ -47,5 +47,6 @@ return {
       "nvim-lua/plenary.nvim",
       "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
+    config = require "user.plugins.config.flutter-tools",
   },
 }
