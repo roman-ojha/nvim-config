@@ -56,6 +56,7 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+      -- "phan", -- third party php LSP: https://github.com/phan/phan
     },
     config = {
       clangd = function() -- modify & add LSP server configuration
@@ -64,6 +65,33 @@ return {
           filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
         }
       end,
+      -- phan = function()
+      --   return {
+      --     -- cmd = {
+      --     --   -- vim.fn.stdpath "data"
+      --     --   --   .. "\\mason\\packages\\phan\\vendor\\bin\\phan "
+      --     --   --   .. "-m json --no-color --no-progress-bar -x -u -S --language-server-on-stdin",
+      --     --   -- "C:\\Users\\razzr\\AppData\\Local\\nvim-data\\mason\\packages\\phan\\vendor\\bin\\phan -m json --no-color --no-progress-bar -x -u -S --language-server-on-stdin",
+      --     --   -- vim.fn.stdpath "data" .. "\\mason\\packages\\phan\\vendor\\bin",
+      --     --   "phan",
+      --     --   -- "-m",
+      --     --   -- "json",
+      --     --   -- "--no-color",
+      --     --   -- "--no-progress-bar",
+      --     --   -- "-x",
+      --     --   -- "-u",
+      --     --   -- "-S",
+      --     --   -- "--language-server-on-stdin",
+      --     --   -- "--allow-polyfill-parser", -- not need to use this argument if you have 'nikic/php-ast' install on you php extensions
+      --     -- },
+      --     -- filetypes = { "php" },
+      --     -- root_dir = function() return vim.fn.stdpath "data" .. "\\mason\\packages\\phan\\vendor\\bin\\" end,
+      --     -- root_dir = function()
+      --     --   return "C:\\Users\\razzr\\AppData\\Local\\nvim-data\\mason\\packages\\phan\\composer.json"
+      --     -- end,
+      --     -- root_dir = require("lspconfig.util").root_pattern("composer.json", ".git"),
+      --   }
+      -- end,
     },
   },
   -- Configure require("lazy").setup() options

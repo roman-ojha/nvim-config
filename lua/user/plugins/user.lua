@@ -41,7 +41,7 @@ return {
   --   event = "BufEnter *.dart",
   -- },
   {
-    "akinsho/flutter-tools.nvim",
+    "akinsho/flutter-tools.nvim", -- Contain LSP, Flutter commands
     event = "BufEnter *.dart",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -62,5 +62,41 @@ return {
       "BufEnter *.java",
       "BufEnter *.sh",
     },
+  },
+  -- {
+  --   "gbprod/phpactor.nvim",
+  --   config = function()
+  --     require "phpactor.handler.update"
+  --     require("phpactor").setup {
+  --       -- your configuration comes here
+  --       -- or leave it empty to use the default settings
+  --       -- refer to the configuration section below
+  --       install = {
+  --         -- path = "C:\\Users\\razzr\\AppData\\Local\\nvim-data\\lazy",
+  --         branch = "master",
+  --         -- bin = "C:\\Users\\razzr\\AppData\\Local\\nvim-data\mason\packages\phan\vendor\bin\phan",
+  --         bin = vim.fn.stdpath "data" .. "/mason/packages/phan/vendor/bin/phan",
+  --         php_bin = "php",
+  --         composer_bin = "composer",
+  --         git_bin = "git",
+  --         check_on_startup = "none",
+  --       },
+  --       lspconfig = {
+  --         enabled = true,
+  --         options = {},
+  --       },
+  --     }
+  --   end,
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim", -- required to update
+  --     "neovim/nvim-lspconfig", -- required to automaticly register lsp serveur
+  --   },
+  --   event = "BufEnter *.php",
+  -- },
+  {
+    "neoclide/coc.nvim", -- I can use this pluing also for complition which provide bunch of extensions, LSP also it provide vsCode extensions features as well
+    -- pelase read the documentation for more information
+    branch = "release",
+    init = function() require "user.plugins.config.coc" end,
   },
 }
