@@ -25,13 +25,12 @@ git clone https://github.com/roman-ojha/nvim-config $HOME\AppData\Local\nvim --d
 - A clipboard tool is necessary for the integration with the system clipboard (see [`:help clipboard-tool`](https://neovim.io/doc/user/provider.html#clipboard-tool) for supported solutions)
 - Terminal with true color support (for the default theme, otherwise it is dependent on the theme you are using)
 
-### My Plugins Setups:
+### Requirements:
 
-1. For C/C++ ISP [clangd](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd)
-
-2. For [wilder.nvim](https://github.com/gelguy/wilder.nvim)
-
-- using Python
+1. Node
+2. For C/C++ ISP [clangd](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd)
+3. For [wilder.nvim](https://github.com/gelguy/wilder.nvim)
+4. using Python
 
 ```shell
  pip3 install pynvim
