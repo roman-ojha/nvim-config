@@ -21,7 +21,7 @@ return {
   {
     "iamcco/markdown-preview.nvim", -- preview markdown,
     config = function() vim.fn["mkdp#util#install"]() end,
-    event = "BufEnter *.md",        -- load only on when we open *.md file
+    event = "BufEnter *.md", -- load only on when we open *.md file
     cmd = "MarkdownPreview",
   },
   {
@@ -96,6 +96,9 @@ return {
   {
     "neoclide/coc.nvim", -- I can use this pluing also for complition which provide bunch of extensions, LSP also it provide vsCode extensions features as well
     -- pelase read the documentation for more information
+    -- https://youtu.be/OXEVhnY621M
+    -- we have to disabe nvim.cmp plugin to use this coc, if we will not do that then bo pluign will give the complition
+    lazy = false,
     branch = "release",
     init = function() require "user.plugins.config.coc" end,
   },

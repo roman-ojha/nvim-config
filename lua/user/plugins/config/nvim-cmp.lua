@@ -1,4 +1,11 @@
 -- Kind icons
+vim.g.cmp_experimental = {
+  disable_runtime_path = true,
+  sources = {
+    php = false, -- disabling cmp for specific programming language so that we can use 'coc' plugins
+  },
+}
+
 local kind_icons = {
   Text = "",
   Method = "m",
@@ -45,4 +52,5 @@ return {
   mapping = {
     ["<C-c>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
   },
+  sources = cmp.config.sources {},
 }
