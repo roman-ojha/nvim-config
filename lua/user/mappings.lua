@@ -3,6 +3,7 @@
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
 local cmp = require "cmp"
+local ui = require "astronvim.utils.ui"
 return {
   -- first key is the mode
   n = {
@@ -84,6 +85,17 @@ return {
     -- ["<leader>rft"] = { ":RunFile tab<CR>", desc = " Run File Tab" },
     ["<leader>rp"] = { ":RunProject<CR>", desc = " Run Project" },
     -- ["<leader>rc"] = { ":RunClose<CR>", desc = " Run Close" },
+    -- Enable/Disable Complition Engine:
+    ["<leader>uc"] = { desc = "Toggle completion engines" },
+    ["<leader>ucc"] = { ui.toggle_cmp, desc = "Toggle default completion engine" },
+    ["<leader>uce"] = {
+      "<CMD>CocEnable<CR>",
+      desc = "Enable completion for coc engine",
+    },
+    ["<leader>ucd"] = {
+      "<CMD>CocDisable<CR>",
+      desc = "Disable completion for coc engine",
+    },
   },
   t = {
     -- setting a mapping to false will disable it

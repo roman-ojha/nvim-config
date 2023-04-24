@@ -52,5 +52,4 @@ return {
   mapping = {
     ["<C-c>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
   },
-  sources = cmp.config.sources {},
 }
