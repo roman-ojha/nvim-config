@@ -27,13 +27,23 @@ git clone https://github.com/roman-ojha/nvim-config $HOME\AppData\Local\nvim --d
 
 ### Requirements:
 
-1. Node
+1. [Node.js](https://nodejs.org/en)
 2. For C/C++ ISP [clangd](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd)
 3. For [wilder.nvim](https://github.com/gelguy/wilder.nvim)
 4. using Python
 
 ```shell
- pip3 install pynvim
+$ pip3 install pynvim
 ```
 
-- :UpdateRemotePlugins
+5. Run Command in neovim:
+
+```
+:UpdateRemotePlugins
+```
+
+6. Install [ripgrep](https://github.com/BurntSushi/ripgrep) for some telescope functions
+
+```shell
+$ choco install ripgrep
+```
