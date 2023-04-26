@@ -1,11 +1,4 @@
 -- Kind icons
-vim.g.cmp_experimental = {
-  disable_runtime_path = true,
-  sources = {
-    php = false, -- disabling cmp for specific programming language so that we can use 'coc' plugins
-  },
-}
-
 local kind_icons = {
   Text = "",
   Method = "m",
@@ -34,6 +27,39 @@ local kind_icons = {
   TypeParameter = "",
 }
 local cmp = require "cmp"
+local ls = require "luasnip"
+require("luasnip/loaders/from_vscode").lazy_load()
+local snip = ls.snippet
+local text = ls.text_node
+local insert = ls.insert_node
+-- custom snippets: https://sbulav.github.io/vim/neovim-setting-up-luasnip/
+ls.add_snippets(nil, {
+  cs = {
+    snip({
+      trig = "tut",
+      namr = "Snippet",
+      dscr = "Boiler plate for c# tutorial",
+    }, {
+      text {
+        "using System;",
+        "",
+      },
+      text {
+        "namespace",
+      },
+      insert(1, "  "),
+      text {
+        "{",
+        "\tclass Prog{",
+        "",
+        "\t\tstatic public void Run(string[] args){",
+        "\t\t}",
+        "\t}",
+        "}",
+      },
+    }),
+  },
+})
 return {
   formatting = {
     fields = { "kind", "abbr", "menu" },
