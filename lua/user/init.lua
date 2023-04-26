@@ -63,6 +63,7 @@ return {
         return {
           single_file_support = true,
           filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+          capabilities = { offsetEncoding = "utf-8" },
         }
       end,
       -- phan = function()
@@ -126,6 +127,7 @@ return {
     -- custom command
     vim.cmd "command CloseWindow execute 'qall'"
     vim.cmd "command CloseWindowAfterSave execute 'wqall'"
+
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
