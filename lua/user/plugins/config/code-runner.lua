@@ -14,5 +14,10 @@ code_runner.setup {
     cs = {
       "dotnet run",
     },
+    cpp = {
+      "cd $dir &&",
+      "g++ $fileName -o $fileNameWithoutExt &&",
+      ".\\$fileNameWithoutExt",
+    },
   },
 }
