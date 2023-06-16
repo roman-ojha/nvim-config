@@ -7,6 +7,7 @@ return {
     opts = {
       ensure_installed = { "lua_ls", "omnisharp", "clangd", "tsserver", "html", "pyright" },
     },
+    config = function() end,
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
   {

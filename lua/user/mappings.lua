@@ -96,6 +96,27 @@ return {
       "<CMD>CocDisable<CR>",
       desc = "Disable completion for coc engine",
     },
+
+    -- For LSP
+    ["<leader>lH"] = {
+      "<cmd>lua vim.lsp.buf.hover()<CR>",
+      desc = "Hover Defination",
+    },
+    ["<leader>lg"] = {
+      desc = "Goto",
+    },
+    ["<leader>lgD"] = {
+      "<cmd>lua vim.lsp.buf.declaration()<CR>",
+      desc = "Goto Declaration",
+    },
+    ["<leader>lgd"] = {
+      "<cmd>lua vim.lsp.buf.definition()<CR>",
+      desc = "Goto Declaration",
+    },
+    ["<leader>lgi"] = {
+      "<cmd>lua vim.lsp.buf.implementation()<CR>",
+      desc = "Goto Implementation",
+    },
   },
   t = {
     -- setting a mapping to false will disable it
