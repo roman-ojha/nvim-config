@@ -18,6 +18,10 @@ return {
         "stylua",
         -- "clang_format",
         -- "cpplint",
+        "mypy", -- python type checker & static analyzer
+        "django_stubs",
+        -- "ruff",  -- python linter
+        "black", -- python formatter
         "eslint",
       },
     },

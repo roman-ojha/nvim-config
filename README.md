@@ -47,3 +47,10 @@ $ pip3 install pynvim
 ```shell
 $ choco install ripgrep
 ```
+
+### If some error occur the try to check health:
+
+```shell
+:CheckHealth
+
+```

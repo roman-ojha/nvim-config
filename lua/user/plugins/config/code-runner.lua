@@ -1,6 +1,5 @@
 local status_ok, code_runner = pcall(require, "code_runner")
 if not status_ok then return end
-print "Hello world"
 
 code_runner.setup {
   term = {
