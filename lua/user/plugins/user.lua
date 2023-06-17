@@ -75,4 +75,11 @@ return {
   {
     "github/copilot.vim",
   },
+  {
+    "dart-lang/dart-vim-plugin", -- dart syntax highlighter & formatter
+    event = "BufEnter *.dart",
+    config = function() 
+      return {}
+    end
+  }
 }
