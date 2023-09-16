@@ -21,7 +21,7 @@ return {
   {
     "iamcco/markdown-preview.nvim", -- preview markdown,
     config = function() vim.fn["mkdp#util#install"]() end,
-    event = "BufEnter *.md", -- load only on when we open *.md file
+    event = "BufEnter *.md",        -- load only on when we open *.md file
     cmd = "MarkdownPreview",
   },
   {
@@ -72,14 +72,12 @@ return {
     branch = "release",
     init = function() require "user.plugins.config.coc" end,
   },
-  {
-    "github/copilot.vim",
-  },
+  -- {
+  --   "github/copilot.vim",
+  -- },
   {
     "dart-lang/dart-vim-plugin", -- dart syntax highlighter & formatter
     event = "BufEnter *.dart",
-    config = function() 
-      return {}
-    end
-  }
+    config = function() return {} end,
+  },
 }

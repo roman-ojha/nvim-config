@@ -23,6 +23,7 @@ return {
       "scss",
       "dockerfile",
       "graphql",
+      "yaml",
     },
   },
 }
