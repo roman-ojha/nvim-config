@@ -15,6 +15,12 @@ return {
         "dockerls",
         "jsonls",
         "prosemd_lsp",
+        "gopls",
+        "prismals",
+        "bufls",
+        "cssls",
+        "sqlls",
+        "yamlls",
       },
     },
   },
@@ -28,11 +34,13 @@ return {
         "stylua",
         -- "clang_format",
         -- "cpplint",
-        "mypy", -- python type checker & static analyzer
+        -- "mypy", -- python type checker & static analyzer
         "django_stubs",
-        -- "ruff",  -- python linter
+        -- "ruff", -- python linter
         "black", -- python formatter
         "eslint",
+        "gofumpt",
+        "goimports-reviser",
       },
     },
   },

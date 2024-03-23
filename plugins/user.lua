@@ -21,7 +21,7 @@ return {
   {
     "iamcco/markdown-preview.nvim", -- preview markdown,
     config = function() vim.fn["mkdp#util#install"]() end,
-    event = "BufEnter *.md",        -- load only on when we open *.md file
+    event = "BufEnter *.md", -- load only on when we open *.md file
     cmd = "MarkdownPreview",
   },
   {
@@ -79,5 +79,14 @@ return {
     "dart-lang/dart-vim-plugin", -- dart syntax highlighter & formatter
     event = "BufEnter *.dart",
     config = function() return {} end,
+  },
+  -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {
+    "catppuccin/nvim",
+    lazy = false,
+    name = "catppuccin",
+    opts = {
+      -- configuration options...
+    },
   },
 }

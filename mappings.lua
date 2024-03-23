@@ -66,7 +66,7 @@ return {
     --   desc = "Focus Terminal",
     -- },
     ["<SA-t>"] = { "<CMD>terminal pwsh.exe<CR>", desc = "Open new powershell terminal" },
-    ["<CA-b>"] = { "<CMD>ToggleTerm direction=vertical<CR>", desc = "Toggle terminal" },
+    -- ["<CA-b>"] = { "<CMD>ToggleTerm direction=vertical<CR>", desc = "Toggle terminal" },
     ["<F6>"] = { "<CMD>ToggleTerm direction=float<CR>", desc = "Toggle terminal" },
     ["<SA-b>"] = { "<CMD>Neotree toggle<CR>", desc = "Toggle Explorer" },
     -- open multiple terminal
@@ -117,6 +117,23 @@ return {
       "<cmd>lua vim.lsp.buf.implementation()<CR>",
       desc = "Goto Implementation",
     },
+    -- For tmux navigation
+    -- ["<C-h>"] = {
+    --   "<cmd> TmuxNavigateLeft<CR>",
+    --   desc = "Window left",
+    -- },
+    -- ["<C-l>"] = {
+    --   "<cmd> TmuxNavigateRight<CR>",
+    --   desc = "Window right",
+    -- },
+    -- ["<C-j>"] = {
+    --   "<cmd> TmuxNavigateDown<CR>",
+    --   desc = "Window Down",
+    -- },
+    -- ["<C-k>"] = {
+    --   "<cmd> TmuxNavigateUp<CR>",
+    --   desc = "Window Up",
+    -- },
   },
   t = {
     -- setting a mapping to false will disable it

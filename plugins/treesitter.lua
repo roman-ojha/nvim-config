@@ -23,6 +23,7 @@ return {
       "scss",
       "dockerfile",
       "graphql",
+      "go",
       -- "yaml", -- no need of yaml it throws an error
     },
   },
