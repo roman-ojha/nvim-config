@@ -77,5 +77,6 @@ return {
   },
   mapping = {
     ["<C-c>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+    ["<Tab>"] = cmp.mapping(function(fallback) fallback() end, { "i" }), -- Tab is conflicting with github copilot complition so we will rather only falback
   },
 }
