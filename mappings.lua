@@ -27,7 +27,6 @@ return {
     ["<CA-w>"] = { function() require("astronvim.utils.buffer").close_all() end, desc = "Close all buffers" },
     ["<SA-w>"] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
     ["<F2>"] = { "<CMD>TransparentToggle<CR>", desc = "Togglling Transparancy" },
-    ["<leader>q"] = { "<CMD>set wrap<CR>", desc = "Wrap word" },
     -- markdown-preview
     ["<leader>m"] = { desc = "  MarkDown Preview" },
     ["<leader>mp"] = { ":MarkdownPreview<CR>", desc = "  Markdown Preview" },
@@ -117,23 +116,24 @@ return {
       "<cmd>lua vim.lsp.buf.implementation()<CR>",
       desc = "Goto Implementation",
     },
-    -- For tmux navigation
-    -- ["<C-h>"] = {
-    --   "<cmd> TmuxNavigateLeft<CR>",
-    --   desc = "Window left",
-    -- },
-    -- ["<C-l>"] = {
-    --   "<cmd> TmuxNavigateRight<CR>",
-    --   desc = "Window right",
-    -- },
-    -- ["<C-j>"] = {
-    --   "<cmd> TmuxNavigateDown<CR>",
-    --   desc = "Window Down",
-    -- },
-    -- ["<C-k>"] = {
-    --   "<cmd> TmuxNavigateUp<CR>",
-    --   desc = "Window Up",
-    -- },
+    ["<leader>by"] = {
+      function()
+        local utils = require "astronvim.utils"
+        utils.notify("File path directory copied to clipboard", vim.log.levels.INFO)
+        -- vim.fn.setreg("+", vim.fn.expand "%:p")
+        -- copy file path directory
+        vim.fn.setreg("*", vim.fn.expand "%:p:h")
+      end,
+      desc = "Copy file path directory to clipboard",
+    },
+    ["<leader>bf"] = {
+      function()
+        local utils = require "astronvim.utils"
+        utils.notify("File path copied to clipboard", vim.log.levels.INFO)
+        vim.fn.setreg("+", vim.fn.expand "%:p")
+      end,
+      desc = "Copy file path to clipboard",
+    },
   },
   t = {
     -- setting a mapping to false will disable it
