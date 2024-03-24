@@ -151,5 +151,9 @@ return {
     -- Stay in indent mode while tabbing lines in visual mod
     ["<"] = { "<gv", desc = "Stay in indent mode while tabbing lines in visual mod" },
     [">"] = { ">gv", desc = "Stay in indent mode while tabbing lines in visual mod" },
+    ["p"] = {
+      '"_dP',
+      desc = "Paste without copying the text",
+    },
   },
 }
