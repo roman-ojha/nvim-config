@@ -14,40 +14,40 @@ local ViMode = {
   -- them at initialisation time.
   static = {
     mode_names = {
-      n = "Normal",
-      no = "Normal?",
-      nov = "Normal?",
-      noV = "Normal?",
-      ["no\22"] = "Normal?",
+      n = "NORMAL",
+      no = "NORMAL?",
+      nov = "NORMAL?",
+      noV = "NORMAL?",
+      ["no\22"] = "NORMAL?",
       niI = "Ni",
       niR = "Nr",
       niV = "Nv",
       nt = "NormalTer",
       v = "visual",
       vs = "Vs",
-      V = "Visual",
+      V = "VISUAL",
       Vs = "Vs",
       ["\22"] = "^V",
       ["\22s"] = "^V",
       s = "S",
       S = "S_",
       ["\19"] = "^S",
-      i = "Insert",
+      i = "INSERT",
       ic = "Ic",
       ix = "Ix",
-      R = "Repalce",
+      R = "REPLACE",
       Rc = "Rc",
       Rx = "Rx",
       Rv = "Rv",
       Rvc = "Rv",
       Rvx = "Rv",
-      c = "Command",
+      c = "COMMAND",
       cv = "Ex",
       r = "...",
       rm = "M",
       ["r?"] = "?",
       ["!"] = "!",
-      t = "Terminal",
+      t = "TMERINAL",
     },
     mode_colors = {
       n = C.blue,
@@ -87,8 +87,14 @@ local ViMode = {
   },
 }
 
+local statusline = {
+  init = ViMode.init,
+  static = ViMode.static,
+  provider = ViMode.provider,
+  hl = ViMode.hl,
+  update = ViMode.update,
+}
+
 return {
-  statusline = {
-    ViMode = ViMode,
-  },
+  statusline = statusline,
 }
