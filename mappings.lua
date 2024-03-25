@@ -204,7 +204,6 @@ return {
         if window_exists then
           vim.api.nvim_command "Neotree close"
           vim.api.nvim_command "SessionRestore"
-          -- vim.api.nvim_command "Neotree show"
         else
           vim.api.nvim_command "SessionRestore"
         end
@@ -213,18 +212,9 @@ return {
     },
     ["<leader>Ss"] = {
       function()
-        -- because of auto-session plugin not compatible with third party plugins we have to first close other plugins session line neotree
-        local manager = require "neo-tree.sources.manager"
-        local renderer = require "neo-tree.ui.renderer"
-        local state = manager.get_state "filesystem"
-        local window_exists = renderer.window_exists(state)
-        -- check if neotree is opened or not
-        if window_exists then
-          utils.notify("Please close you file explorer first", vim.log.levels.INFO)
-        else
-          vim.api.nvim_command "SessionSave"
-          utils.notify("Session saved", vim.log.levels.INFO)
-        end
+        vim.api.nvim_command "Neotree close"
+        vim.api.nvim_command "SessionSave"
+        utils.notify("Session saved", vim.log.levels.INFO)
       end,
       desc = "Save session",
     },
