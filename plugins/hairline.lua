@@ -1,13 +1,6 @@
-local ViMode = require("user.plugins.config.hairline").statusline.ViMode
+-- local ViMode = require("user.plugins.config.hairline").statusline.ViMode
 return {
   "rebelot/heirline.nvim",
-  opts = {
-    statusline = {
-      init = ViMode.init,
-      static = ViMode.static,
-      provider = ViMode.provider,
-      hl = ViMode.hl,
-      update = ViMode.update,
-    },
-  },
+  -- opts = require "user.plugins.config.heirline.heirline", -- custom statusline
+  opts = require "user.plugins.config.heirline.nvchad-style", -- nvChad style statusline
 }
