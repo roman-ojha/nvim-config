@@ -1,12 +1,36 @@
 -- Customizing the statusline to match like NVChad
 -- Based on the documentaion: https://docs.astronvim.com/recipes/status/#replicate-nvchad-statusline
 
-local nvChadIcons = {
-  VimIcon = "",
-  ScrollText = "",
+-- modify variables used by heirline but not defined in the setup call directly
+local nvChadHeirline = {
+  -- define the separators between each section
+  separators = {
+    nvChadLeft = { "", " " }, -- separator for the left side of the statusline
+    nvChadRight = { " ", "" }, -- separator for the right side of the statusline
+  },
+  -- add new colors that can be used by heirline
+  colors = function(hl)
+    local get_hlgroup = require("astronvim.utils").get_hlgroup
+    -- use helper function to get highlight group properties
+    local comment_fg = get_hlgroup("Comment").fg
+    hl.blank_bg = get_hlgroup("Folded").fg
+    hl.file_info_bg = get_hlgroup("Visual").bg
+    hl.nav_icon_bg = get_hlgroup("String").fg
+    hl.nav_fg = hl.nav_icon_bg
+    hl.folder_icon_bg = get_hlgroup("Error").fg
+    return hl
+  end,
+  attributes = {
+    mode = { bold = true },
+  },
+  icon_highlights = {
+    file_icon = {
+      statusline = false,
+    },
+  },
 }
 
-return function(_, opts)
+local nvChadStatus = function(_, opts)
   local status = require "astronvim.utils.status"
   opts.statusline = {
     -- default highlight for the entire statusline
@@ -121,3 +145,8 @@ return function(_, opts)
   -- return the final options table
   return opts
 end
+
+return {
+  nvChadHeirline = nvChadHeirline,
+  nvChadStatus = nvChadStatus,
+}

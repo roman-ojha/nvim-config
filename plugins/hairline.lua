@@ -2,5 +2,5 @@
 return {
   "rebelot/heirline.nvim",
   -- opts = require "user.plugins.config.heirline.heirline", -- custom statusline
-  opts = require "user.plugins.config.heirline.nvchad-style", -- nvChad style statusline
+  opts = require("user.plugins.config.heirline.nvchad-style").nvChadStatus, -- nvChad style statusline
 }
