@@ -79,7 +79,7 @@ return {
     ["<leader>t4"] = { "<CMD>4ToggleTerm direction=vertical<CR>", desc = "Toggle 4nd terminal" },
     -- Symbol-outline plugin
     -- Symbol-outline plugin
-    ["<leader>s"] = { "<CMD>SymbolsOutline<CR>", desc = "𝓒 Toggle Symbols outline" },
+    ["<leader>S"] = { "<CMD>SymbolsOutline<CR>", desc = "𝓒 Toggle Symbols outline" },
     -- Code Runner Plugin
     ["<leader>r"] = { desc = " Code Runner" },
     ["<leader>rr"] = { ":RunCode<CR>", desc = " Run Code" },
@@ -190,10 +190,10 @@ return {
     },
 
     -- auto session plugin mappings
-    ["<leader>S"] = {
+    ["<leader>s"] = {
       desc = get_icon("Session", 1, true) .. "Session",
     },
-    ["<leader>Sl"] = {
+    ["<leader>sl"] = {
       -- "",
       function()
         -- first checking neotree is opened or not because auto session is not managing the session of neotree so we will first close the neo tree before restoring the session
@@ -210,7 +210,7 @@ return {
       end,
       desc = "Load last session",
     },
-    ["<leader>Ss"] = {
+    ["<leader>ss"] = {
       function()
         vim.api.nvim_command "Neotree close"
         vim.api.nvim_command "SessionSave"

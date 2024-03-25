@@ -141,7 +141,6 @@ local nvChadStatus = function(_, opts)
       },
     },
   }
-
   -- return the final options table
   return opts
 end

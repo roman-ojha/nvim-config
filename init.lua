@@ -23,7 +23,9 @@ return {
   },
   -- Set colorscheme to use
   -- colorscheme = "astrodark", -- default theme
-  colorscheme = "catppuccin", -- added theme
+  -- colorscheme = "catppuccin",
+  -- colorscheme = "default",
+  colorscheme = "murphy",
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
