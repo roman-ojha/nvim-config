@@ -4,6 +4,9 @@
 -- automatically pick-up stored data by this setting.)
 local cmp = require "cmp"
 local ui = require "astronvim.utils.ui"
+local utils = require "astronvim.utils"
+local get_icon = utils.get_icon
+
 return {
   -- first key is the mode
   n = {
@@ -184,6 +187,50 @@ return {
         vim.fn.jobstart("start " .. path)
       end,
       desc = "Open file in default os application",
+    },
+
+    -- auto session plugin mappings
+    ["<leader>S"] = {
+      desc = get_icon("Session", 1, true) .. "Session",
+    },
+    ["<leader>Sl"] = {
+      -- "",
+      function()
+        -- first checking neotree is opened or not because auto session is not managing the session of neotree so we will first close the neo tree before restoring the session
+        local manager = require "neo-tree.sources.manager"
+        local renderer = require "neo-tree.ui.renderer"
+        local state = manager.get_state "filesystem"
+        local window_exists = renderer.window_exists(state)
+        if window_exists then
+          vim.api.nvim_command "Neotree close"
+          vim.api.nvim_command "SessionRestore"
+          -- vim.api.nvim_command "Neotree show"
+        else
+          vim.api.nvim_command "SessionRestore"
+        end
+      end,
+      desc = "Load last session",
+    },
+    ["<leader>Ss"] = {
+      function()
+        -- because of auto-session plugin not compatible with third party plugins we have to first close other plugins session line neotree
+        local manager = require "neo-tree.sources.manager"
+        local renderer = require "neo-tree.ui.renderer"
+        local state = manager.get_state "filesystem"
+        local window_exists = renderer.window_exists(state)
+        -- check if neotree is opened or not
+        if window_exists then
+          utils.notify("Please close you file explorer first", vim.log.levels.INFO)
+        else
+          vim.api.nvim_command "SessionSave"
+          utils.notify("Session saved", vim.log.levels.INFO)
+        end
+      end,
+      desc = "Save session",
+    },
+    ["<leader>Sd"] = {
+      "<cmd>SessionDelete<CR>",
+      desc = "Delete CWD session",
     },
   },
   t = {

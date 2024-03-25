@@ -89,4 +89,17 @@ return {
       -- configuration options...
     },
   },
+
+  -- auto session to automatically save the session based on CWD
+  {
+    "rmagatti/auto-session",
+    lazy = false,
+    opts = {
+      -- https://github.com/rmagatti/auto-session
+      auto_session_enabled = false,
+      -- auto_save_enabled = false,
+
+      -- Issue: https://github.com/rmagatti/auto-session/issues/259#issuecomment-1812288591
+    },
+  },
 }
