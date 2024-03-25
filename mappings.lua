@@ -116,21 +116,63 @@ return {
       "<cmd>lua vim.lsp.buf.implementation()<CR>",
       desc = "Goto Implementation",
     },
+    -- ["<leader>by"] = {
+    --   function()
+    --     local utils = require "astronvim.utils"
+    --     utils.notify("File path directory copied to clipboard", vim.log.levels.INFO)
+    --     -- vim.fn.setreg("+", vim.fn.expand "%:p")
+    --     -- copy file path directory
+    --     vim.fn.setreg("*", vim.fn.expand "%:p:h")
+    --   end,
+    --   desc = "Copy file path directory to clipboard",
+    -- },
+    -- ["<leader>bf"] = {
+    --   function()
+    --     local utils = require "astronvim.utils"
+    --     utils.notify("File path copied to clipboard", vim.log.levels.INFO)
+    --     vim.fn.setreg("+", vim.fn.expand "%:p")
+    --   end,
+    --   desc = "Copy file path to clipboard",
+    -- },
     ["<leader>by"] = {
       function()
-        local utils = require "astronvim.utils"
-        utils.notify("File path directory copied to clipboard", vim.log.levels.INFO)
-        -- vim.fn.setreg("+", vim.fn.expand "%:p")
-        -- copy file path directory
-        vim.fn.setreg("*", vim.fn.expand "%:p:h")
+        local util_ok, utils = pcall(require, "astronvim.utils")
+        if not util_ok then return end
+        -- Ref: https://github.com/nvim-neo-tree/neo-tree.nvim/blob/main/lua/neo-tree/sources/filesystem/init.lua
+        -- Ref: https://github.com/nvim-neo-tree/neo-tree.nvim/blob/16d1b194376bf1fc2acd89ccb3c29ba8315bfcea/lua/neo-tree/sources/common/commands.lua#L721
+        local manager_ok, manager = pcall(require, "neo-tree.sources.manager")
+        if not manager_ok then return end
+        local state = manager.get_state("filesystem", nil)
+        local tree = state.tree
+        if not tree then return end
+        local nsuccess, node = pcall(tree.get_node, tree)
+        if nsuccess and node then
+          local path = node.path
+          -- get directory pat from path
+          path = vim.fn.fnamemodify(path, ":h")
+          vim.fn.setreg("*", path)
+          utils.notify("Copied directory path to clipboard", vim.log.levels.INFO)
+        end
       end,
-      desc = "Copy file path directory to clipboard",
+      desc = "Copy directory path to clipboard",
     },
     ["<leader>bf"] = {
       function()
-        local utils = require "astronvim.utils"
-        utils.notify("File path copied to clipboard", vim.log.levels.INFO)
-        vim.fn.setreg("+", vim.fn.expand "%:p")
+        local util_ok, utils = pcall(require, "astronvim.utils")
+        if not util_ok then return end
+        -- Ref: https://github.com/nvim-neo-tree/neo-tree.nvim/blob/main/lua/neo-tree/sources/filesystem/init.lua
+        -- Ref: https://github.com/nvim-neo-tree/neo-tree.nvim/blob/16d1b194376bf1fc2acd89ccb3c29ba8315bfcea/lua/neo-tree/sources/common/commands.lua#L721
+        local manager_ok, manager = pcall(require, "neo-tree.sources.manager")
+        if not manager_ok then return end
+        local state = manager.get_state("filesystem", nil)
+        local tree = state.tree
+        if not tree then return end
+        local nsuccess, node = pcall(tree.get_node, tree)
+        if nsuccess and node then
+          local path = node.path
+          vim.fn.setreg("*", path)
+          utils.notify("Copied file path to clipboard", vim.log.levels.INFO)
+        end
       end,
       desc = "Copy file path to clipboard",
     },
