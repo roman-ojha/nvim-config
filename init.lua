@@ -144,7 +144,7 @@ return {
     -- custom command
     vim.cmd "command CW execute 'qall'"
     vim.cmd "command CWS execute 'wqall'"
-    -- wrap word by default
+    -- wrap word
     vim.cmd "set wrap"
 
     -- Set up custom filetypes

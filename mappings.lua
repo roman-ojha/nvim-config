@@ -134,6 +134,15 @@ return {
       end,
       desc = "Copy file path to clipboard",
     },
+    ["<leader>bo"] = {
+      function()
+        local path = vim.fn.expand "%:f"
+        -- print fs in neovim
+        -- open file in default os application
+        vim.fn.jobstart("start " .. path)
+      end,
+      desc = "Open file in default os application",
+    },
   },
   t = {
     -- setting a mapping to false will disable it
