@@ -222,6 +222,12 @@ return {
       "<cmd>SessionDelete<CR>",
       desc = "Delete CWD session",
     },
+
+    -- zen mode
+    ["<leader>z"] = {
+      function() require("zen-mode").toggle() end,
+      desc = "Toggle Zen Mode",
+    },
   },
   t = {
     -- setting a mapping to false will disable it

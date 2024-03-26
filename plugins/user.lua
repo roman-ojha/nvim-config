@@ -102,4 +102,14 @@ return {
       -- Issue: https://github.com/rmagatti/auto-session/issues/259#issuecomment-1812288591
     },
   },
+
+  -- zen mode
+  {
+    "folke/zen-mode.nvim", -- https://github.com/folke/zen-mode.nvim
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
 }
